@@ -269,7 +269,7 @@ def combine_csv(mem_pth, session_pth, combined_pth):
             output_file.write(file1.read())
         
         with open(session_pth, 'r') as file2:
-            next(file2)  # 跳过csv2的表头行
+            next(file2) 
             output_file.write(file2.read())
 
 def get_true_labels(file_name):
