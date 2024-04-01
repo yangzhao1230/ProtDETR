@@ -2,7 +2,7 @@
 
 ProtDETR is a novel framework designed for the classification of multifunctional enzymes. This README provides detailed instructions on setting up the environment, preparing data, and running commands.
 
-**Note:** We are currently organizing a clean and easy-to-use version of the conda environment for ProtDETR. It is still being uploaded and will be completed shortly. Please check back soon for the updated environment requirements.
+**Note:** We are currently organizing a clean and easy-to-use version of the codebase for ProtDETR. It is still being uploaded and will be completed shortly. Please check back soon.
 
 ## Environment Requirements
 
