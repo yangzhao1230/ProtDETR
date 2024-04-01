@@ -45,7 +45,7 @@ To train models for enzyme classification, use the following commands:
 
 The default parameters utilized in our scripts are consistent with those detailed in our final publication. Users are encouraged to modify the hyperparameters to tailor them to their specific needs. To facilitate a more efficient training process, it is highly recommended to use Distributed Data Parallel (DDP) via `torchrun`. For practical implementations of `torchrun`, please consult the `train_multi.sh` and `train_mono.sh` scripts.
 
-Ensure that the "saved_models" directory has already been created within your project directory to prevent any issues with model weight saving.
+Ensure that the `saved_models` directory has already been created within your project directory to prevent any issues with model weight saving.
 
 ### Evaluating
 
