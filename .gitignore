@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# PyTorch Checkpoints
+*.pt
+*.pth
+
+# Data directories
+data/
+saved_models/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Python virtual environments
+venv/
+.env
+.pyvenv.cfg
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# PyCharm project settings
+.idea/
+
+# VSCode settings
+.vscode/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# amlt
+.amltconfig
