@@ -42,7 +42,8 @@ To train models for enzyme classification, use the following commands:
   ```
   python train_mono.py
   ```
-  Our default parameters are the ones reported in our final paper. You may modify hyperparameters according to your needs. For faster training, it is recommended to use Distributed Data Parallel (DDP) with `torchrun`.
+  
+The default parameters used in our scripts align with those reported in our final publication. Should you wish to adjust the hyperparameters to better suit your specific requirements, you're encouraged to do so. To expedite the training process, leveraging Distributed Data Parallel (DDP) via `torchrun` is highly recommended. For practical examples on employing `torchrun`, please refer to the `train_multi.sh` and `train_mono.sh` scripts.
 
 ### Evaluating
 
