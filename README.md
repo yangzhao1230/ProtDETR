@@ -2,16 +2,19 @@
 
 ProtDETR is a novel framework designed for the classification of multifunctional enzymes. This README provides detailed instructions on setting up the environment, preparing data, and running commands.
 
+**Note:** We are currently organizing a clean and easy-to-use version of the conda environment for ProtDETR. It is still being uploaded and will be completed shortly. Please check back soon for the updated environment requirements.
+
 ## Environment Requirements
 
-To run ProtDETR, you need to set up an environment with specific package versions. The required packages are:
+To run ProtDETR, you will need to set up an environment with specific package versions. We are in the process of finalizing a conda environment that will encapsulate all the necessary dependencies in a clean manner. This environment will be available for download soon.
+
+The required packages include but are not limited to:
 
 - fair-esm-2.0.0
-- torch-1.13.0
+- torch-1.13.0 (GPU version, compatible with specific CUDA versions)
+- scipy-1.10.1
 
-You can install these packages using pip:
-
-    pip install fair-esm==2.0.0 torch==1.13.0
+You can temporarily install these packages using pip. For the GPU version of torch, make sure to specify the version that matches your CUDA installation:
 
 ## Data Requirements
 
