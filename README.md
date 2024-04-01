@@ -44,4 +44,4 @@ Pretrained models for ProtDETR will be made available on Google Drive soon. Stay
 
 ## Acknowledgments
 
-Our code is primarily based on the DETR framework by Facebook Research ([DETR GitHub repository](https://github.com/facebookresearch/detr)) and the CLEAN method ([CLEAN GitHub repository](https://github.com/tttianhao/CLEAN)). We express our gratitude to the developers of these projects for their groundbreaking work that facilitated the development of ProtDETR.
+Our code is primarily based on the DETR framework by Facebook Research ([DETR GitHub repository](https://github.com/facebookresearch/detr)), the CLEAN method ([CLEAN GitHub repository](https://github.com/tttianhao/CLEAN)), and we have also incorporated code from the EnzBert project ([EnzBert GitLab repository](https://gitlab.inria.fr/nbuton/tfpc)). We express our gratitude to the developers of these projects for their groundbreaking work that facilitated the development of ProtDETR.
