@@ -1,6 +1,6 @@
 # ProtDETR
 
-ProtDETR is a novel framework designed for the classification of multifunctional enzymes. This README provides detailed instructions on setting up the environment, preparing data, and running training commands for both enzyme types.
+ProtDETR is a novel framework designed for the classification of multifunctional enzymes. This README provides detailed instructions on setting up the environment, preparing data, and running commands.
 
 ## Environment Requirements
 
