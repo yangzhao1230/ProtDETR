@@ -6,7 +6,7 @@ ProtDETR is a novel framework designed for the classification of multifunctional
 
 ## Environment Requirements
 
-To run ProtDETR, you will need to set up an environment with specific package versions. We are in the process of finalizing a conda environment that will encapsulate all the necessary dependencies in a clean manner. This environment will be available for download soon.
+To run ProtDETR, you will need to set up an environment with specific package versions. 
 
 The required packages include but are not limited to:
 
@@ -20,11 +20,13 @@ You can temporarily install these packages using pip. For the GPU version of tor
 
 ### Multifunctional Enzyme Datasets
 
-For multifunctional enzyme classification, download the datasets (split100, new, price) from [CLEAN's GitHub repository](https://github.com/tttianhao/CLEAN). Place the corresponding CSV files into the `./data/multi_func/` directory.
+To facilitate the classification of multifunctional enzymes, please download the datasets (namely split100, new, and price) from [CLEAN's GitHub repository](https://github.com/tttianhao/CLEAN). Subsequently, move the downloaded CSV files into the `./data/multi_func/` directory within your project.
 
 ### Monofunctional Enzyme Dataset
 
-For monofunctional enzyme classification, download the ECPred40 dataset from Zenodo: <https://doi.org/10.5281/zenodo.7253910>. Convert the training, validation, and test sets to the same CSV format and place them in the `./data/mono_func/` directory.
+For the classification of monofunctional enzymes, acquire the ECPred40 dataset available on Zenodo at <https://doi.org/10.5281/zenodo.7253910>. Ensure to convert the training, validation, and test sets into CSV format and position them in the `./data/mono_func/` directory of your project.
+
+Alternatively, you may opt to download the pre-organized dataset directly from our Google Drive at [this link](https://drive.google.com/drive/folders/1g87b982Rt5kX46wpi7-zyWgGBEE_e9IN?usp=sharing). Simply place the entire `data` directory within the root of your project for seamless integration.
 
 ## Running Commands
 
@@ -42,8 +44,10 @@ To train models for enzyme classification, use the following commands:
   ```
   python train_mono.py
   ```
-  
-The default parameters used in our scripts align with those reported in our final publication. Should you wish to adjust the hyperparameters to better suit your specific requirements, you're encouraged to do so. To expedite the training process, leveraging Distributed Data Parallel (DDP) via `torchrun` is highly recommended. For practical examples on employing `torchrun`, please refer to the `train_multi.sh` and `train_mono.sh` scripts.
+
+The default parameters utilized in our scripts are consistent with those detailed in our final publication. Users are encouraged to modify the hyperparameters to tailor them to their specific needs. To facilitate a more efficient training process, it is highly recommended to use Distributed Data Parallel (DDP) via `torchrun`. For practical implementations of `torchrun`, please consult the `train_multi.sh` and `train_mono.sh` scripts.
+
+Ensure that the "saved_models" directory has already been created within your project directory to prevent any issues with model weight saving.
 
 ### Evaluating
 
@@ -100,7 +104,8 @@ Results saved for A0JNI4 in ./uniprot_results/A0JNI4.txt
 
 ## Pretrained Models
 
-Pretrained models for ProtDETR will be made available on Google Drive soon. Stay tuned for updates.
+Pretrained models for ProtDETR are available on Google Drive at [this link](https://drive.google.com/drive/folders/1g87b982Rt5kX46wpi7-zyWgGBEE_e9IN?usp=sharing). Please download and place the `saved_models` directory within the root directory of your project.
+
 
 ## Acknowledgments
 
