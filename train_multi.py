@@ -197,10 +197,11 @@ def main(args):
         if utils.get_rank() == 0:
             print(f'Epoch {epoch}/{args.epochs} | Train Loss: {train_loss:.4f} | Time: {(train_end_time - epoch_start_time):.2f}s | ESM Time: {esm_time:.2f}s')
 
-    if dist.is_initialized():
-        torch.save(model.module.state_dict(), f"./saved_models/{args.model_name}.pt")
-    else:
-        torch.save(model.state_dict(), f"./saved_models/{args.model_name}.pt")
+    if utils.get_rank() == 0:
+        if dist.is_initialized():
+            torch.save(model.module.state_dict(), f"./saved_models/{args.model_name}.pt")
+        else:
+            torch.save(model.state_dict(), f"./saved_models/{args.model_name}.pt")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('ProtDETR multi-func training script', parents=[get_args_parser()])
