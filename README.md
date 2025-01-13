@@ -108,12 +108,14 @@ Pretrained models for ProtDETR are available on Google Drive at [this link](http
 Our code is primarily based on the DETR framework by Facebook Research ([DETR GitHub repository](https://github.com/facebookresearch/detr)), the CLEAN method ([CLEAN GitHub repository](https://github.com/tttianhao/CLEAN)), and we have also incorporated code from the EnzBert project ([EnzBert GitLab repository](https://gitlab.inria.fr/nbuton/tfpc)).
 
 ## Citation
-@misc{yang2025interpretableenzymefunctionprediction,
-      title={Interpretable Enzyme Function Prediction via Residue-Level Detection}, 
-      author={Zhao Yang and Bing Su and Jiahao Chen and Ji-Rong Wen},
-      year={2025},
-      eprint={2501.05644},
-      archivePrefix={arXiv},
-      primaryClass={q-bio.BM},
-      url={https://arxiv.org/abs/2501.05644}, 
+
+@misc{yang2025interpretableenzymefunctionprediction,  
+      title={Interpretable Enzyme Function Prediction via Residue-Level Detection},  
+      author={Zhao Yang and Bing Su and Jiahao Chen and Ji-Rong Wen},  
+      year={2025},  
+      eprint={2501.05644},  
+      archivePrefix={arXiv},  
+      primaryClass={q-bio.BM},  
+      url={https://arxiv.org/abs/2501.05644}  
 }
+
