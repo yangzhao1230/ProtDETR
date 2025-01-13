@@ -109,6 +109,8 @@ Our code is primarily based on the DETR framework by Facebook Research ([DETR Gi
 
 ## Citation
 
+We kindly ask you to cite our paper if you find our code or research helpful.
+
 @misc{yang2025interpretableenzymefunctionprediction,  
       title={Interpretable Enzyme Function Prediction via Residue-Level Detection},  
       author={Zhao Yang and Bing Su and Jiahao Chen and Ji-Rong Wen},  
