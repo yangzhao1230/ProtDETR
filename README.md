@@ -1,6 +1,6 @@
 # ProtDETR
 
-ProtDETR is a novel framework designed for the classification of multifunctional enzymes.
+ProtDETR is a novel framework designed for the classification of multifunctional enzymes inspired by Object Detection in Computer Vision. You can read the preprint [here](https://arxiv.org/abs/2501.05644) - *Interpretable Enzyme Function Prediction via Residue-Level Detection*.
 
 ## Environment Requirements
 
@@ -11,8 +11,6 @@ The required packages include but are not limited to:
 - fair-esm-2.0.0
 - torch-1.13.0 (GPU version, compatible with specific CUDA versions)
 - scipy-1.10.1
-
-You can temporarily install these packages using pip. For the GPU version of torch, make sure to specify the version that matches your CUDA installation:
 
 ## Data Requirements
 
@@ -107,4 +105,15 @@ Pretrained models for ProtDETR are available on Google Drive at [this link](http
 
 ## Acknowledgments
 
-Our code is primarily based on the DETR framework by Facebook Research ([DETR GitHub repository](https://github.com/facebookresearch/detr)), the CLEAN method ([CLEAN GitHub repository](https://github.com/tttianhao/CLEAN)), and we have also incorporated code from the EnzBert project ([EnzBert GitLab repository](https://gitlab.inria.fr/nbuton/tfpc)). We express our gratitude to the developers of these projects for their groundbreaking work that facilitated the development of ProtDETR.
+Our code is primarily based on the DETR framework by Facebook Research ([DETR GitHub repository](https://github.com/facebookresearch/detr)), the CLEAN method ([CLEAN GitHub repository](https://github.com/tttianhao/CLEAN)), and we have also incorporated code from the EnzBert project ([EnzBert GitLab repository](https://gitlab.inria.fr/nbuton/tfpc)).
+
+## Citation
+@misc{yang2025interpretableenzymefunctionprediction,
+      title={Interpretable Enzyme Function Prediction via Residue-Level Detection}, 
+      author={Zhao Yang and Bing Su and Jiahao Chen and Ji-Rong Wen},
+      year={2025},
+      eprint={2501.05644},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.BM},
+      url={https://arxiv.org/abs/2501.05644}, 
+}
