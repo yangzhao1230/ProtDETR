@@ -6,7 +6,7 @@ ProtDETR is a novel framework designed for the classification of multifunctional
 
 To run ProtDETR, you will need to set up an environment with specific package versions. 
 
-The required packages include but are not limited to:
+The primary packages:
 
 - fair-esm-2.0.0
 - torch-1.13.0 (GPU version, compatible with specific CUDA versions)
