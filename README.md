@@ -16,7 +16,11 @@ The primary packages:
 
 ### Multifunctional Enzyme Datasets
 
-To facilitate the classification of multifunctional enzymes, please download the datasets (namely split100, new, and price) from [CLEAN's GitHub repository](https://github.com/tttianhao/CLEAN). Subsequently, move the downloaded CSV files into the `./data/multi_func/` directory within your project.
+<!-- To facilitate the classification of multifunctional enzymes, please download the datasets (namely split100, new, and price) from [CLEAN's GitHub repository](https://github.com/tttianhao/CLEAN). Subsequently, move the downloaded CSV files into the `./data/multi_func/` directory within your project. -->
+
+To facilitate the classification of multifunctional enzymes, please download the datasets (namely split100, new, and price) directly from our Google Drive instead of CLEAN's GitHub repository. For details regarding this change, please see [this issue discussion](https://github.com/yangzhao1230/ProtDETR/issues/2#issuecomment-2974407634). Subsequently, move the downloaded CSV files into the `./data/multi_func/` directory within your project.
+
+**Note:** Our dataset files may have different row ordering compared to the current CLEAN repository, but the content remains identical when sorted by Entry.
 
 ### Monofunctional Enzyme Dataset
 
