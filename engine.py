@@ -48,6 +48,59 @@ def get_esm_emb(model, alphabet, esm_layer, batch_sequences, device):
 
     return token_embeddings, attention_mask
 
+def decode_multi_predictions(logits, label_to_ec, infer_threshold):
+    """
+    Decode query-level logits into unique EC predictions per sequence.
+    """
+    num_labels = len(label_to_ec)
+    probas = logits.softmax(-1)[:, :, :-1]
+    preds = torch.argmax(logits, dim=2)
+
+    keep = probas.max(-1).values > infer_threshold
+    preds[keep == False] = num_labels
+
+    pred_labels = []
+    pred_labels_with_probs = []
+    for i in range(logits.size(0)):
+        pred_idxs = preds[i].detach().cpu().tolist()
+        pred_probas = probas[i].detach().cpu()
+
+        pred_ecs_with_probs = []
+        for query_idx, label_idx in enumerate(pred_idxs):
+            if label_idx == num_labels:
+                continue
+            pred_ecs_with_probs.append(
+                (label_to_ec[label_idx], float(pred_probas[query_idx, label_idx].item()))
+            )
+
+        if len(pred_ecs_with_probs) == 0:
+            """
+            If no EC is predicted, choose the one with the highest probability.
+            We do this because the model may not predict any EC for some sequences,
+            but our baseline CLEAN always predicts at least one EC.
+            """
+            max_prob, max_prob_label_idx = torch.max(probas[i], dim=1)
+            best_query_idx = int(max_prob.argmax().item())
+            best_label_idx = int(max_prob_label_idx[best_query_idx].item())
+            pred_ecs_with_probs = [
+                (label_to_ec[best_label_idx], float(max_prob[best_query_idx].item()))
+            ]
+
+        pred_ecs_with_probs.sort(key=lambda x: x[1], reverse=True)
+
+        unique_pred_ecs_with_probs = []
+        seen = set()
+        for ec, prob in pred_ecs_with_probs:
+            if ec in seen:
+                continue
+            seen.add(ec)
+            unique_pred_ecs_with_probs.append((ec, prob))
+
+        pred_labels_with_probs.append(unique_pred_ecs_with_probs)
+        pred_labels.append([ec for ec, _ in unique_pred_ecs_with_probs])
+
+    return pred_labels, pred_labels_with_probs
+
 def train_one_epoch(esm_model, alphabet, esm_layer,
                     model: torch.nn.Module, criterion: torch.nn.Module,
                     data_loader: Iterable, optimizer: torch.optim.Optimizer,

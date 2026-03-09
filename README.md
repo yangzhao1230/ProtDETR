@@ -63,6 +63,46 @@ Ensure that the `saved_models` directory has already been created within your pr
   python eval_mono.py
   ```
 
+`eval_multi.py` is intended for the released benchmark splits and evaluates the hard-coded `new.csv` and `price.csv` datasets under `./data/multi_func/`.
+
+### Predicting on Your Own Sequences
+
+To run ProtDETR on custom protein sequences, use the standalone prediction script instead of `eval_multi.py`:
+
+```bash
+python predict_multi.py \
+  --input_path ./example_sequences.fasta \
+  --output_path ./predictions.tsv
+```
+
+Supported input formats:
+
+- FASTA: standard multi-FASTA, where each header line is used as `Entry`.
+- Table file: a CSV or TSV with exact column names `Entry` and `Sequence`.
+
+Example table format:
+
+```text
+Entry	Sequence
+seq1	MKQKIIIFGGSFDPIHNAHLYIAKHAI...
+seq2	MAVAQCPASCGELIQGWILGSEKLVS...
+```
+
+For the released multifunctional model, the EC label mapping is built from `split100.csv` by default. If your label-map file is stored elsewhere, pass it explicitly:
+
+```bash
+python predict_multi.py \
+  --input_path ./example_sequences.csv \
+  --train_data_path /path/to/split100.csv \
+  --model_path /path/to/ProtDETR_split100.pt \
+  --output_path ./predictions.tsv
+```
+
+Notes:
+
+- Sequence lengths above 1022 amino acids are truncated to the first 1022 residues, consistent with ESM-1b.
+- The output file contains `Top1_EC`, `Top1_Probability`, and the full deduplicated EC prediction list with probabilities.
+
 
 ### Inferring Important Sites (e.g., Active Sites)
 
@@ -128,4 +168,3 @@ We kindly ask you to cite our paper if you find our code or research helpful.
       url={https://arxiv.org/abs/2501.05644}, 
 }
 ```
-
